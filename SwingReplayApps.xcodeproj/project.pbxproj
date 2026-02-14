@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 63;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5987814226B930D4365F526A /* PhoneRuntimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30985B1D2E5025B8F18F835B /* PhoneRuntimeController.swift */; };
+		8322784315442C69740CF6AD /* SwingReplayPhoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53982273E0F68C644F95119B /* SwingReplayPhoneApp.swift */; };
+		A5D751DFCDB9F83B7D944BD7 /* PhoneRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4619216DCEAD3D41C3F29CC /* PhoneRootView.swift */; };
+		B11BC0827D819CE2941D080F /* PadRuntimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82B3B3BC1AD566BF56F756CB /* PadRuntimeController.swift */; };
+		B9681B6480110E1626661AF5 /* SwingReplayCore in Frameworks */ = {isa = PBXBuildFile; productRef = 4B5F6903CF79C37C1B38C606 /* SwingReplayCore */; };
+		BB888A4E5DD702B32922F24D /* SwingReplayCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1EFC5993897071EB46BF685C /* SwingReplayCore */; };
+		F4D562422880A626D474187C /* SwingReplayPadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A2D46A7B85FF5B39708E90 /* SwingReplayPadApp.swift */; };
+		F6E2F6A4FC8683F9BC47EF3C /* PadRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D8DB9A75E111B22B86B3C8 /* PadRootView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0E4D5B6D68799250A8A4BA26 /* SwingReplayPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwingReplayPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1924E56941C03D948370E3D9 /* SwingReplayPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwingReplayPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30985B1D2E5025B8F18F835B /* PhoneRuntimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneRuntimeController.swift; sourceTree = "<group>"; };
+		4330FA7311CB8BBCFB6B6178 /* Swing-Replay */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Swing-Replay"; path = .; sourceTree = SOURCE_ROOT; };
+		53982273E0F68C644F95119B /* SwingReplayPhoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwingReplayPhoneApp.swift; sourceTree = "<group>"; };
+		69D8DB9A75E111B22B86B3C8 /* PadRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadRootView.swift; sourceTree = "<group>"; };
+		76A2D46A7B85FF5B39708E90 /* SwingReplayPadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwingReplayPadApp.swift; sourceTree = "<group>"; };
+		82B3B3BC1AD566BF56F756CB /* PadRuntimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadRuntimeController.swift; sourceTree = "<group>"; };
+		D4619216DCEAD3D41C3F29CC /* PhoneRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneRootView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3724613EF28E99D0F7E67A73 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB888A4E5DD702B32922F24D /* SwingReplayCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1ED43AC19587268175A3F8B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9681B6480110E1626661AF5 /* SwingReplayCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		53B6E4FA53D196E1BB9D4B77 /* SwingReplayPhone */ = {
+			isa = PBXGroup;
+			children = (
+				D4619216DCEAD3D41C3F29CC /* PhoneRootView.swift */,
+				30985B1D2E5025B8F18F835B /* PhoneRuntimeController.swift */,
+				53982273E0F68C644F95119B /* SwingReplayPhoneApp.swift */,
+			);
+			name = SwingReplayPhone;
+			path = Apps/SwingReplayPhone;
+			sourceTree = "<group>";
+		};
+		8019AB071FD5FDB07B6E1E19 = {
+			isa = PBXGroup;
+			children = (
+				BC9E4112DAFE422EA0A93DE4 /* Packages */,
+				F2C451C07E9F3DF66B6E3625 /* SwingReplayPad */,
+				53B6E4FA53D196E1BB9D4B77 /* SwingReplayPhone */,
+				EF82F112CD9DB97835416439 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BC9E4112DAFE422EA0A93DE4 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				4330FA7311CB8BBCFB6B6178 /* Swing-Replay */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		EF82F112CD9DB97835416439 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0E4D5B6D68799250A8A4BA26 /* SwingReplayPad.app */,
+				1924E56941C03D948370E3D9 /* SwingReplayPhone.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F2C451C07E9F3DF66B6E3625 /* SwingReplayPad */ = {
+			isa = PBXGroup;
+			children = (
+				69D8DB9A75E111B22B86B3C8 /* PadRootView.swift */,
+				82B3B3BC1AD566BF56F756CB /* PadRuntimeController.swift */,
+				76A2D46A7B85FF5B39708E90 /* SwingReplayPadApp.swift */,
+			);
+			name = SwingReplayPad;
+			path = Apps/SwingReplayPad;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		15905E9CD3FD9F3307F7D0EA /* SwingReplayPhone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF913CAED6D2A79C17B47F25 /* Build configuration list for PBXNativeTarget "SwingReplayPhone" */;
+			buildPhases = (
+				9A4593CB90D798041D433A77 /* Sources */,
+				A1ED43AC19587268175A3F8B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwingReplayPhone;
+			packageProductDependencies = (
+				4B5F6903CF79C37C1B38C606 /* SwingReplayCore */,
+			);
+			productName = SwingReplayPhone;
+			productReference = 1924E56941C03D948370E3D9 /* SwingReplayPhone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		547B04D274B79E74FB65FC26 /* SwingReplayPad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9D4DC61C0FF3C1F2B2EB48B /* Build configuration list for PBXNativeTarget "SwingReplayPad" */;
+			buildPhases = (
+				43D36D914BFE3BC028806289 /* Sources */,
+				3724613EF28E99D0F7E67A73 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwingReplayPad;
+			packageProductDependencies = (
+				1EFC5993897071EB46BF685C /* SwingReplayCore */,
+			);
+			productName = SwingReplayPad;
+			productReference = 0E4D5B6D68799250A8A4BA26 /* SwingReplayPad.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E798F88DCDA987C3F6106B43 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = A49BE312923E07544A336A77 /* Build configuration list for PBXProject "SwingReplayApps" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 8019AB071FD5FDB07B6E1E19;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				FF4EDC0346D990A6924818E3 /* XCLocalSwiftPackageReference "." */,
+			);
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				547B04D274B79E74FB65FC26 /* SwingReplayPad */,
+				15905E9CD3FD9F3307F7D0EA /* SwingReplayPhone */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		43D36D914BFE3BC028806289 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6E2F6A4FC8683F9BC47EF3C /* PadRootView.swift in Sources */,
+				B11BC0827D819CE2941D080F /* PadRuntimeController.swift in Sources */,
+				F4D562422880A626D474187C /* SwingReplayPadApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A4593CB90D798041D433A77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5D751DFCDB9F83B7D944BD7 /* PhoneRootView.swift in Sources */,
+				5987814226B930D4365F526A /* PhoneRuntimeController.swift in Sources */,
+				8322784315442C69740CF6AD /* SwingReplayPhoneApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		20D5FB163C7169943EBE5B18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6398GJ56Q4;
+				INFOPLIST_FILE = "Config/SwingReplayPad-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomoki.swingreplay.pad;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		3853E4855FA34249169B96E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6398GJ56Q4;
+				INFOPLIST_FILE = "Config/SwingReplayPhone-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomoki.swingreplay.phone;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		4AED65DD40561C1C67064501 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomoki.swingreplay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		BF0605FE05EF2A3EC6ABFD0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomoki.swingreplay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		F016906B51488393504F4BB2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6398GJ56Q4;
+				INFOPLIST_FILE = "Config/SwingReplayPad-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomoki.swingreplay.pad;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		FB8D959EF2E8DB466A5F02DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 6398GJ56Q4;
+				INFOPLIST_FILE = "Config/SwingReplayPhone-Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tomoki.swingreplay.phone;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A49BE312923E07544A336A77 /* Build configuration list for PBXProject "SwingReplayApps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BF0605FE05EF2A3EC6ABFD0E /* Debug */,
+				4AED65DD40561C1C67064501 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AF913CAED6D2A79C17B47F25 /* Build configuration list for PBXNativeTarget "SwingReplayPhone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3853E4855FA34249169B96E3 /* Debug */,
+				FB8D959EF2E8DB466A5F02DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B9D4DC61C0FF3C1F2B2EB48B /* Build configuration list for PBXNativeTarget "SwingReplayPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20D5FB163C7169943EBE5B18 /* Debug */,
+				F016906B51488393504F4BB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		FF4EDC0346D990A6924818E3 /* XCLocalSwiftPackageReference "." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = .;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1EFC5993897071EB46BF685C /* SwingReplayCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwingReplayCore;
+		};
+		4B5F6903CF79C37C1B38C606 /* SwingReplayCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwingReplayCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = E798F88DCDA987C3F6106B43 /* Project object */;
+}

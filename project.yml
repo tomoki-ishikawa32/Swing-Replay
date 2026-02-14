@@ -1,0 +1,66 @@
+name: SwingReplayApps
+options:
+  deploymentTarget:
+    iOS: "17.0"
+packages:
+  SwingReplayCore:
+    path: .
+settings:
+  base:
+    PRODUCT_BUNDLE_IDENTIFIER: com.tomoki.swingreplay
+    SWIFT_VERSION: 6.0
+targets:
+  SwingReplayPhone:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: Apps/SwingReplayPhone
+    info:
+      path: Config/SwingReplayPhone-Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.tomoki.swingreplay.phone
+        TARGETED_DEVICE_FAMILY: 1
+        INFOPLIST_KEY_UILaunchScreen_Generation: true
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: true
+    dependencies:
+      - package: SwingReplayCore
+        product: SwingReplayCore
+
+  SwingReplayPad:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: Apps/SwingReplayPad
+    info:
+      path: Config/SwingReplayPad-Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.tomoki.swingreplay.pad
+        TARGETED_DEVICE_FAMILY: 2
+        INFOPLIST_KEY_UILaunchScreen_Generation: true
+        INFOPLIST_KEY_UIApplicationSceneManifest_Generation: true
+    dependencies:
+      - package: SwingReplayCore
+        product: SwingReplayCore
+
+schemes:
+  SwingReplayPhone:
+    build:
+      targets:
+        SwingReplayPhone: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+
+  SwingReplayPad:
+    build:
+      targets:
+        SwingReplayPad: all
+    run:
+      config: Debug
+    test:
+      config: Debug
