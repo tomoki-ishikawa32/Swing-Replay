@@ -6,6 +6,8 @@
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIconName</key>
+	<string>AppIcon</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -18,12 +20,12 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>NSLocalNetworkUsageDescription</key>
-	<string>iPhoneから映像を受信するためにローカルネットワークを使用します。</string>
 	<key>NSBonjourServices</key>
 	<array>
 		<string>_swing-replay._tcp</string>
 	</array>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>iPhoneから映像を受信するためにローカルネットワークを使用します。</string>
 	<key>UILaunchScreen</key>
 	<dict/>
 	<key>UISupportedInterfaceOrientations~ipad</key>

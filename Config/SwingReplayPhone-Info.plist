@@ -6,6 +6,8 @@
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIconName</key>
+	<string>AppIcon</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -18,14 +20,14 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>NSCameraUsageDescription</key>
-	<string>スイング映像を撮影して送信するためにカメラを使用します。</string>
-	<key>NSLocalNetworkUsageDescription</key>
-	<string>iPadへ映像を送信するためにローカルネットワークを使用します。</string>
 	<key>NSBonjourServices</key>
 	<array>
 		<string>_swing-replay._tcp</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>スイング映像を撮影して送信するためにカメラを使用します。</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>iPadへ映像を送信するためにローカルネットワークを使用します。</string>
 	<key>UILaunchScreen</key>
 	<dict/>
 	<key>UISupportedInterfaceOrientations</key>

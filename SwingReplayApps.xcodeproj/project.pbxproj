@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C45A0012F001000A0000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22882BA72F5FC0AA0028B8F8 /* Assets.xcassets */; };
+		1C45A0012F001000A0000002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22882BA72F5FC0AA0028B8F8 /* Assets.xcassets */; };
 		5987814226B930D4365F526A /* PhoneRuntimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30985B1D2E5025B8F18F835B /* PhoneRuntimeController.swift */; };
 		8322784315442C69740CF6AD /* SwingReplayPhoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53982273E0F68C644F95119B /* SwingReplayPhoneApp.swift */; };
 		A5D751DFCDB9F83B7D944BD7 /* PhoneRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4619216DCEAD3D41C3F29CC /* PhoneRootView.swift */; };
@@ -20,6 +22,7 @@
 /* Begin PBXFileReference section */
 		0E4D5B6D68799250A8A4BA26 /* SwingReplayPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwingReplayPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1924E56941C03D948370E3D9 /* SwingReplayPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwingReplayPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		22882BA72F5FC0AA0028B8F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30985B1D2E5025B8F18F835B /* PhoneRuntimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneRuntimeController.swift; sourceTree = "<group>"; };
 		4330FA7311CB8BBCFB6B6178 /* Swing-Replay */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Swing-Replay"; path = .; sourceTree = SOURCE_ROOT; };
 		53982273E0F68C644F95119B /* SwingReplayPhoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwingReplayPhoneApp.swift; sourceTree = "<group>"; };
@@ -48,6 +51,25 @@
 		};
 /* End PBXFrameworksBuildPhase section */
 
+/* Begin PBXResourcesBuildPhase section */
+		1C45A0012F001000A0000011 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C45A0012F001000A0000001 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C45A0012F001000A0000012 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C45A0012F001000A0000002 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXGroup section */
 		53B6E4FA53D196E1BB9D4B77 /* SwingReplayPhone */ = {
 			isa = PBXGroup;
@@ -63,6 +85,7 @@
 		8019AB071FD5FDB07B6E1E19 = {
 			isa = PBXGroup;
 			children = (
+				22882BA72F5FC0AA0028B8F8 /* Assets.xcassets */,
 				BC9E4112DAFE422EA0A93DE4 /* Packages */,
 				F2C451C07E9F3DF66B6E3625 /* SwingReplayPad */,
 				53B6E4FA53D196E1BB9D4B77 /* SwingReplayPhone */,
@@ -107,6 +130,7 @@
 			buildPhases = (
 				9A4593CB90D798041D433A77 /* Sources */,
 				A1ED43AC19587268175A3F8B /* Frameworks */,
+				1C45A0012F001000A0000011 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -126,6 +150,7 @@
 			buildPhases = (
 				43D36D914BFE3BC028806289 /* Sources */,
 				3724613EF28E99D0F7E67A73 /* Frameworks */,
+				1C45A0012F001000A0000012 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -199,6 +224,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6398GJ56Q4;
 				INFOPLIST_FILE = "Config/SwingReplayPad-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -208,6 +234,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tomoki.swingreplay.pad;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -218,6 +245,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6398GJ56Q4;
@@ -362,6 +390,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6398GJ56Q4;
 				INFOPLIST_FILE = "Config/SwingReplayPad-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -371,6 +400,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tomoki.swingreplay.pad;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -381,6 +411,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6398GJ56Q4;
