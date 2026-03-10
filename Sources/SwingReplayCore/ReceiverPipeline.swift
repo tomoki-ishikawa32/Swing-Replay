@@ -128,12 +128,10 @@ public final class ReceiverPipeline {
             return
         }
 
-        applyDriftCorrection()
-
         let elapsedMs = frame.timestampMillis >= anchorSenderTimestampMillis
             ? frame.timestampMillis - anchorSenderTimestampMillis
             : 0
-        let dueTime = anchorLocalTime + (Double(elapsedMs) / 1_000.0) + targetDelaySeconds + playbackOffsetSeconds
+        let dueTime = anchorLocalTime + (Double(elapsedMs) / 1_000.0) + targetDelaySeconds
         queuedFrames.append(QueuedFrame(frame: frame, dueTime: dueTime))
         queuedFrames.sort { $0.dueTime < $1.dueTime }
 
@@ -144,20 +142,8 @@ public final class ReceiverPipeline {
         }
     }
 
-    private func applyDriftCorrection() {
-        let targetBufferedFrames = min(maxBufferedFrames - 12, max(24, Int(targetDelaySeconds * 24)))
-        let correctionStep = 0.015
-        let tolerance = 6
-
-        if queuedFrames.count > targetBufferedFrames + tolerance {
-            playbackOffsetSeconds = max(-0.5, playbackOffsetSeconds - correctionStep)
-        } else if queuedFrames.count < targetBufferedFrames - tolerance {
-            playbackOffsetSeconds = min(0.5, playbackOffsetSeconds + correctionStep)
-        }
-    }
-
     private func makeMetrics(now: TimeInterval) -> ReceiverMetrics {
-        let estimatedLatencyMs = Int((targetDelaySeconds + playbackOffsetSeconds) * 1_000)
+        let estimatedLatencyMs = Int(targetDelaySeconds * 1_000)
         let oldestFrameLatenessMs: Int
         if let first = queuedFrames.first {
             oldestFrameLatenessMs = Int((now - first.dueTime) * 1_000)
@@ -178,7 +164,7 @@ public final class ReceiverPipeline {
             estimatedLatencyMs: estimatedLatencyMs,
             oldestFrameLatenessMs: oldestFrameLatenessMs,
             newestFrameLeadMs: newestFrameLeadMs,
-            playbackOffsetMs: Int(playbackOffsetSeconds * 1_000)
+            playbackOffsetMs: 0
         )
     }
 }

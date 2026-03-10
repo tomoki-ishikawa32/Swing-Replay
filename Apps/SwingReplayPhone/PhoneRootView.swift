@@ -1,3 +1,4 @@
+import AVFoundation
 import SwiftUI
 
 struct PhoneRootView: View {
@@ -6,8 +7,18 @@ struct PhoneRootView: View {
     var body: some View {
         GeometryReader { proxy in
             ZStack {
-                LinearGradient(colors: [Color(red: 0.02, green: 0.08, blue: 0.16), Color(red: 0.1, green: 0.2, blue: 0.3)], startPoint: .topLeading, endPoint: .bottomTrailing)
+                PhoneCameraPreviewView(session: runtime.captureSession)
                     .ignoresSafeArea()
+
+                LinearGradient(
+                    colors: [
+                        Color.black.opacity(0.15),
+                        Color.black.opacity(0.45)
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+                .ignoresSafeArea()
 
                 VStack(alignment: .leading, spacing: 12) {
                     Text("Swing Replay / Phone")
@@ -34,5 +45,37 @@ struct PhoneRootView: View {
                 .frame(width: proxy.size.width, height: proxy.size.height, alignment: .topLeading)
             }
         }
+    }
+}
+
+private struct PhoneCameraPreviewView: UIViewRepresentable {
+    let session: AVCaptureSession
+
+    func makeUIView(context: Context) -> PreviewContainerView {
+        let view = PreviewContainerView()
+        view.attach(session: session)
+        return view
+    }
+
+    func updateUIView(_ uiView: PreviewContainerView, context: Context) {
+        uiView.attach(session: session)
+    }
+}
+
+private final class PreviewContainerView: UIView {
+    override class var layerClass: AnyClass {
+        AVCaptureVideoPreviewLayer.self
+    }
+
+    private var previewLayer: AVCaptureVideoPreviewLayer {
+        layer as! AVCaptureVideoPreviewLayer
+    }
+
+    func attach(session: AVCaptureSession) {
+        if previewLayer.session !== session {
+            previewLayer.session = session
+        }
+        previewLayer.videoGravity = .resizeAspectFill
+        backgroundColor = .black
     }
 }

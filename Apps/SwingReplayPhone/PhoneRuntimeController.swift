@@ -17,6 +17,10 @@ final class PhoneRuntimeController: ObservableObject {
     private var metricsTimer: Timer?
     private var started = false
 
+    var captureSession: AVCaptureSession {
+        capture.session
+    }
+
     init() {
         senderSession.stateDidChange = { [weak self] state in
             Task { @MainActor in

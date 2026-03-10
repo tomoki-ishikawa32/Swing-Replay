@@ -93,13 +93,11 @@ final class PadRuntimeController: ObservableObject {
                 popBudget = 5
             }
 
-            var frameToDecode: ReassembledFrame?
             for _ in 0..<popBudget {
                 guard let frame = self.pipeline.popDisplayableFrame() else { break }
-                frameToDecode = frame
-            }
-
-            if let frame = frameToDecode {
+                // Decode all due frames in order. Dropping directly to the
+                // newest frame makes playback alternate between slow and fast
+                // and can also break inter-frame references.
                 self.decoder.decode(frame: frame)
             }
         }
