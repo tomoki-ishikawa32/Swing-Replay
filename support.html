@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Swing Replay Support</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #132033;
+      --muted: #5b6675;
+      --accent: #0a84ff;
+      --border: #d9e2ec;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #eef5ff 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 48px 20px 64px;
+    }
+
+    .hero,
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(8, 30, 60, 0.06);
+    }
+
+    .hero {
+      padding: 32px;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      padding: 28px;
+      margin-bottom: 16px;
+    }
+
+    h1,
+    h2 {
+      margin: 0 0 12px;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+    }
+
+    p,
+    li {
+      margin: 0 0 10px;
+      color: var(--muted);
+    }
+
+    ul,
+    ol {
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .label {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #e7f1ff;
+      color: #0a5ec2;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .footer {
+      margin-top: 12px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="label">Support</div>
+      <h1>Swing Replay サポート</h1>
+      <p>
+        Swing Replay は、iPhone で撮影したゴルフスイング映像を iPad にワイヤレス送信し、
+        遅延再生で確認するためのアプリです。
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>使い方</h2>
+      <ol>
+        <li>iPhone で <code>SwingReplayPhone</code> を起動します。</li>
+        <li>iPad で <code>SwingReplayPad</code> を起動します。</li>
+        <li>両方の端末で Wi-Fi と Bluetooth を有効にします。</li>
+        <li>接続後、iPhone で撮影した映像が iPad に表示されます。</li>
+        <li>遅延秒数は iPad 側で調整できます。</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>推奨環境</h2>
+      <ul>
+        <li>iPhone と iPad を同じ Wi-Fi ネットワークに接続する</li>
+        <li>端末同士を近い距離で使用する</li>
+        <li>iPhone を安定した三脚に固定して撮影する</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>よくある質問</h2>
+      <p><strong>Q. 接続できません。</strong></p>
+      <p>A. 両端末の Wi-Fi、Bluetooth、ローカルネットワーク権限を確認してください。</p>
+
+      <p><strong>Q. 映像が遅れます。</strong></p>
+      <p>A. 通信環境や端末性能により遅延が増えることがあります。同じ Wi-Fi に接続し、不要なアプリを終了してください。</p>
+
+      <p><strong>Q. カメラが使えません。</strong></p>
+      <p>A. iPhone の設定でカメラ権限を許可してください。</p>
+    </section>
+
+    <section class="card">
+      <h2>お問い合わせ</h2>
+      <p>不具合報告やご質問は、以下までご連絡ください。</p>
+      <p>メール: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+      <p class="footer">Copyright 2026 Tomoki Ishikawa</p>
+    </section>
+  </main>
+</body>
+</html>

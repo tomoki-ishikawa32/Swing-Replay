@@ -82,7 +82,24 @@ final class PadRuntimeController: ObservableObject {
         decodeTimer?.invalidate()
         decodeTimer = Timer.scheduledTimer(withTimeInterval: 1.0 / 24.0, repeats: true) { [weak self] _ in
             guard let self else { return }
-            if let frame = self.pipeline.popDisplayableFrame() {
+            let bufferedFrames = self.pipeline.metrics().bufferedFrames
+            let popBudget: Int
+            switch bufferedFrames {
+            case ...24:
+                popBudget = 1
+            case ...48:
+                popBudget = 3
+            default:
+                popBudget = 5
+            }
+
+            var frameToDecode: ReassembledFrame?
+            for _ in 0..<popBudget {
+                guard let frame = self.pipeline.popDisplayableFrame() else { break }
+                frameToDecode = frame
+            }
+
+            if let frame = frameToDecode {
                 self.decoder.decode(frame: frame)
             }
         }
@@ -97,7 +114,10 @@ final class PadRuntimeController: ObservableObject {
                 let action = self.failSafe.evaluate(metrics: metrics)
                 self.apply(action: action)
                 self.runtimeText = String(describing: self.failSafe.runtimeState)
-                self.debugText = "receiveFPS=\(self.fpsCounter) buffered=\(metrics.bufferedFrames) reassembly=\(metrics.reassemblyBacklog)"
+                self.debugText = """
+                receiveFPS=\(self.fpsCounter) buffered=\(metrics.bufferedFrames) reassembly=\(metrics.reassemblyBacklog)
+                latencyMs=\(metrics.estimatedLatencyMs) lateMs=\(metrics.oldestFrameLatenessMs) leadMs=\(metrics.newestFrameLeadMs) offsetMs=\(metrics.playbackOffsetMs)
+                """
                 self.fpsCounter = 0
             }
         }

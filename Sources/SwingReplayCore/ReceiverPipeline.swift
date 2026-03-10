@@ -4,10 +4,25 @@ import OSLog
 public struct ReceiverMetrics: Equatable, Sendable {
     public let bufferedFrames: Int
     public let reassemblyBacklog: Int
+    public let estimatedLatencyMs: Int
+    public let oldestFrameLatenessMs: Int
+    public let newestFrameLeadMs: Int
+    public let playbackOffsetMs: Int
 
-    public init(bufferedFrames: Int, reassemblyBacklog: Int) {
+    public init(
+        bufferedFrames: Int,
+        reassemblyBacklog: Int,
+        estimatedLatencyMs: Int,
+        oldestFrameLatenessMs: Int,
+        newestFrameLeadMs: Int,
+        playbackOffsetMs: Int
+    ) {
         self.bufferedFrames = bufferedFrames
         self.reassemblyBacklog = reassemblyBacklog
+        self.estimatedLatencyMs = estimatedLatencyMs
+        self.oldestFrameLatenessMs = oldestFrameLatenessMs
+        self.newestFrameLeadMs = newestFrameLeadMs
+        self.playbackOffsetMs = playbackOffsetMs
     }
 }
 
@@ -26,6 +41,7 @@ public final class ReceiverPipeline {
     private var anchorSenderTimestampMillis: UInt64?
     private var anchorLocalTime: TimeInterval?
     private var lastSenderTimestampMillis: UInt64?
+    private var playbackOffsetSeconds: TimeInterval = 0
 
     public init(
         targetDelaySeconds: TimeInterval = 3,
@@ -74,6 +90,7 @@ public final class ReceiverPipeline {
         anchorSenderTimestampMillis = nil
         anchorLocalTime = nil
         lastSenderTimestampMillis = nil
+        playbackOffsetSeconds = 0
     }
     
     public func setTargetDelaySeconds(_ seconds: TimeInterval) {
@@ -90,7 +107,7 @@ public final class ReceiverPipeline {
     public func metrics() -> ReceiverMetrics {
         lock.lock()
         defer { lock.unlock() }
-        return ReceiverMetrics(bufferedFrames: queuedFrames.count, reassemblyBacklog: reassembler.pendingFrameCount)
+        return makeMetrics(now: Date().timeIntervalSince1970)
     }
 
     private func enqueue(frame: ReassembledFrame, now: TimeInterval) {
@@ -99,6 +116,7 @@ public final class ReceiverPipeline {
             queuedFrames.removeAll(keepingCapacity: true)
             anchorSenderTimestampMillis = nil
             anchorLocalTime = nil
+            playbackOffsetSeconds = 0
         }
         lastSenderTimestampMillis = frame.timestampMillis
 
@@ -110,10 +128,12 @@ public final class ReceiverPipeline {
             return
         }
 
+        applyDriftCorrection()
+
         let elapsedMs = frame.timestampMillis >= anchorSenderTimestampMillis
             ? frame.timestampMillis - anchorSenderTimestampMillis
             : 0
-        let dueTime = anchorLocalTime + (Double(elapsedMs) / 1_000.0) + targetDelaySeconds
+        let dueTime = anchorLocalTime + (Double(elapsedMs) / 1_000.0) + targetDelaySeconds + playbackOffsetSeconds
         queuedFrames.append(QueuedFrame(frame: frame, dueTime: dueTime))
         queuedFrames.sort { $0.dueTime < $1.dueTime }
 
@@ -122,5 +142,43 @@ public final class ReceiverPipeline {
             queuedFrames.removeFirst(overflow)
             logger.debug("Dropped \(overflow) buffered frame(s) to keep memory bounded")
         }
+    }
+
+    private func applyDriftCorrection() {
+        let targetBufferedFrames = min(maxBufferedFrames - 12, max(24, Int(targetDelaySeconds * 24)))
+        let correctionStep = 0.015
+        let tolerance = 6
+
+        if queuedFrames.count > targetBufferedFrames + tolerance {
+            playbackOffsetSeconds = max(-0.5, playbackOffsetSeconds - correctionStep)
+        } else if queuedFrames.count < targetBufferedFrames - tolerance {
+            playbackOffsetSeconds = min(0.5, playbackOffsetSeconds + correctionStep)
+        }
+    }
+
+    private func makeMetrics(now: TimeInterval) -> ReceiverMetrics {
+        let estimatedLatencyMs = Int((targetDelaySeconds + playbackOffsetSeconds) * 1_000)
+        let oldestFrameLatenessMs: Int
+        if let first = queuedFrames.first {
+            oldestFrameLatenessMs = Int((now - first.dueTime) * 1_000)
+        } else {
+            oldestFrameLatenessMs = 0
+        }
+
+        let newestFrameLeadMs: Int
+        if let last = queuedFrames.last {
+            newestFrameLeadMs = Int((last.dueTime - now) * 1_000)
+        } else {
+            newestFrameLeadMs = 0
+        }
+
+        return ReceiverMetrics(
+            bufferedFrames: queuedFrames.count,
+            reassemblyBacklog: reassembler.pendingFrameCount,
+            estimatedLatencyMs: estimatedLatencyMs,
+            oldestFrameLatenessMs: oldestFrameLatenessMs,
+            newestFrameLeadMs: newestFrameLeadMs,
+            playbackOffsetMs: Int(playbackOffsetSeconds * 1_000)
+        )
     }
 }
